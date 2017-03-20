@@ -1,14 +1,20 @@
-class GlobalmessagesController < ApplicationController
+class Api::V1::GlobalmessagesController < ApplicationController
 	respond_to :json
-    skip_before_filter  :verify_authenticity_token
+    skip_before_filter :verify_authenticity_token
 
+    # Reading all globalmessages
+    def index
+        respond_with GlobalMessage.all
+    end
+
+    # Reading globalmessages
     def show
         respond_with GlobalMessage.find(params[:id])
     end
 
     # Creating globalmessages
     def create
-        globalmessage=GlobalMessage.new(globalmessage_params)
+        globalmessage = GlobalMessage.new(globalmessage_params)
 
         if globalmessage.save
             render json: globalmessage, status: 201

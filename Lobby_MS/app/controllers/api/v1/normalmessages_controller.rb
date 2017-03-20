@@ -1,14 +1,20 @@
-class NormalmessagesController < ApplicationController
+class Api::V1::NormalmessagesController < ApplicationController
 	respond_to :json
-    skip_before_filter  :verify_authenticity_token
+    skip_before_filter :verify_authenticity_token
 
+    # Reading all normalmessages
+    def index
+        respond_with NormalMessage.all
+    end
+
+    # Reading normalmessages
     def show
         respond_with NormalMessage.find(params[:id])
     end
 
     # Creating normalmessages
     def create
-        normalmessage=NormalMessage.new(normalmessage_params)
+        normalmessage = NormalMessage.new(normalmessage_params)
 
         if normalmessage.save
             render json: normalmessage, status: 201

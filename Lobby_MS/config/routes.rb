@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :api, defaults: { format: :json } do
         namespace :v1 do
             #devise_for :users
-            resources :users, :globalmessages, :normalmessages, :only => [:show, :create, :update, :destroy]
+            resources :users, :globalmessages, :normalmessages, :only => [:index, :show, :create, :update, :destroy]
         end
     end
 end
