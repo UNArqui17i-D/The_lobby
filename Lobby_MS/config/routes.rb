@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # API routes path
-  namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-
-    end
-  end  
-end 
+	# API routes path
+	namespace :api, defaults: { format: :json } do
+    	namespace :v1 do
+      		resources :messages, :only => [:index, :show, :create, :update, :destroy]
+    	end
+  	end  
+end
