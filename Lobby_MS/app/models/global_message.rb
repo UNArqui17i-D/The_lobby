@@ -1,2 +1,0 @@
-class GlobalMessage < ApplicationRecord
-end
