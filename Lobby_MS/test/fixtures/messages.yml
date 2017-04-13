@@ -2,8 +2,10 @@
 
 one:
   iduser: 1
+  name: MyString
   content: MyText
 
 two:
   iduser: 1
+  name: MyString
   content: MyText
