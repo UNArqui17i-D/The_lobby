@@ -11,22 +11,40 @@
     </div>
   <% end %>
 
+<div class="container">
+  
   <div class="field">
-    <%= f.label :iduser %>
+    <p align="left">User Identifier: 
+    <font color="black">
     <%= f.number_field :iduser %>
-  </div>
+    </font>
+    </p>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %>
+<div class="field">
+    <p align="left">User Name:  
+    <font color="black">
     <%= f.text_field :name %>
+    </font>
+    </p>
   </div>
+  
+  
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <p align="left">Message's Content: 
+    <font color="black">
+    <%= f.text_area :content%>
+    </font>
+    </p>
+    
   </div>
 
   <div class="actions">
+    <font color="black" size="5">
     <%= f.submit %>
+    </font>
+    
+  </div>
   </div>
 <% end %>

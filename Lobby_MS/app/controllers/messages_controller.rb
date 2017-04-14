@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
       #if message.save
       if @message.save
         #render json: message, status: 201
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to @message, notice: 'The Message was successfully sent.' }
         format.json { render :show, status: :created, location: @message }
       else
         #render json: { errors: message.errors}, status: 422
