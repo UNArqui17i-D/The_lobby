@@ -1,0 +1,2 @@
+class GlobalMessage < ApplicationRecord
+end

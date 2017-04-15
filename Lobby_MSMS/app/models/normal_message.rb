@@ -1,0 +1,2 @@
+class NormalMessage < ApplicationRecord
+end

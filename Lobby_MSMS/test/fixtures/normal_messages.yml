@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idUserA: 1
+  idUserB: 1
+  content: MyText
+
+two:
+  idUserA: 1
+  idUserB: 1
+  content: MyText
