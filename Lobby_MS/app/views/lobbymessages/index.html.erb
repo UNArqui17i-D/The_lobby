@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lobbymessages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Iduser</th>
+      <th>Messagecontent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lobbymessages.each do |lobbymessage| %>
+      <tr>
+        <td><%= lobbymessage.iduser %></td>
+        <td><%= lobbymessage.messagecontent %></td>
+        <td><%= link_to 'Show', lobbymessage %></td>
+        <td><%= link_to 'Edit', edit_lobbymessage_path(lobbymessage) %></td>
+        <td><%= link_to 'Destroy', lobbymessage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lobbymessage', new_lobbymessage_path %>

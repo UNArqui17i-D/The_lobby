@@ -1,0 +1,27 @@
+<%= form_for(lobbymessage) do |f| %>
+  <% if lobbymessage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lobbymessage.errors.count, "error") %> prohibited this lobbymessage from being saved:</h2>
+
+      <ul>
+      <% lobbymessage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :iduser %>
+    <%= f.number_field :iduser %>
+  </div>
+
+  <div class="field">
+    <%= f.label :messagecontent %>
+    <%= f.text_field :messagecontent %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

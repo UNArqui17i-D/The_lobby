@@ -1,2 +1,0 @@
-class NormalMessage < ApplicationRecord
-end

@@ -1,0 +1,2 @@
+class Lobbymessage < ApplicationRecord
+end
