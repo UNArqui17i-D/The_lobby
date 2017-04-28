@@ -7,7 +7,7 @@ require 'bundler/setup' # Set up gems listed in the Gemfile.
   	#module Rails
     	#class Server
       		#def default_options
-        		#super.merge(Host: '0.0.0.0', Port: 3000)
+        		#super.merge(Host: '0.0.0.0', Port: 4010)
       		#end
 		#end
 	#end
