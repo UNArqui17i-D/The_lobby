@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LobbymessageTest < ActiveSupport::TestCase
+class GlobalmessageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

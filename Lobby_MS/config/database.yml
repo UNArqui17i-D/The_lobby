@@ -17,18 +17,15 @@ default: &default
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  #database: Lobby_MS_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  #database: Lobby_MS_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -51,6 +48,3 @@ test:
 #
 production:
   <<: *default
-  #database: Lobby_MS_production
-  #username: Lobby_MS
-  #password: <%= ENV['LOBBY_MS_DATABASE_PASSWORD'] %>

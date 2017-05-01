@@ -10,14 +10,16 @@ services:
       MYSQL_PASSWORD: root
     ports:
       - "3308:3306"
-  webapp:
-    build: .
+  app:
+    build: . 
     command: bundle exec rails s -p 4010 -b '0.0.0.0'
     volumes:
-      - .:/railsapi
+      - ".:/Lobby_MS"
     ports:
       - "4010:4010"
     depends_on:
+      - db
+    links:
       - db
     environment:
       DB_USER: root
