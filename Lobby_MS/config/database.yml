@@ -9,27 +9,26 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
-
-development:
+default: &default
   adapter: mysql2
   encoding: utf8
-  database: Lobby_MS
-  username: root
-  password: 123
-  host: 192.168.99.101
-  port: 3308
+  pool: 5
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  #database: Lobby_MS_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  encoding: utf8
-  database: Lobby_MS
-  username: root
-  password: 123
-  host: 192.168.99.101
-  port: 3308
+  <<: *default
+  #database: Lobby_MS_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -51,10 +50,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: Lobby_MS
-  username: root
-  password: 123
-  host: 192.168.99.101
-  port: 3308
+  <<: *default
+  #database: Lobby_MS_production
+  #username: Lobby_MS
+  #password: <%= ENV['LOBBY_MS_DATABASE_PASSWORD'] %>
